@@ -26,11 +26,38 @@ public class Array {
 
     public void addLast(int e){
 
+        
+        add(size,e);
+//
+//        if(size == data.length){
+//            throw new IllegalArgumentException("filed");
+//        }
+////        data[size] = e;
+////        size ++;  //更好
+//        data[size ++] = e; // 不好
 
-        if(size == data.length){
+    }
+
+
+    public void addFirst(int e){
+
+        add(0,e);
+    }
+
+    public void add(int index,int e){
+        if (size == data.length){
             throw new IllegalArgumentException("filed");
         }
-        data[size] = e;
+
+        if(index < 0 || index > size){
+            throw new IllegalArgumentException("filed");
+        }
+
+        for (int i = size -1;i>=index;i--){
+            data[i+1] = data[i];
+        }
+
+        data[index] = e;
         size ++;
     }
 
