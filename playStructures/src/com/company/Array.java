@@ -1,3 +1,5 @@
+package com.company;
+
 public class Array {
 
     private int[] data;
@@ -46,11 +48,11 @@ public class Array {
 
     public void add(int index,int e){
         if (size == data.length){
-            throw new IllegalArgumentException("filed");
+            throw new IllegalArgumentException("failed");
         }
 
         if(index < 0 || index > size){
-            throw new IllegalArgumentException("filed");
+            throw new IllegalArgumentException("failed");
         }
 
         for (int i = size -1;i>=index;i--){
@@ -65,7 +67,7 @@ public class Array {
     @Override
     public String toString(){
         StringBuilder res = new StringBuilder();
-        res.append(String.format("Array;size = %d, capacity = %d\n",size,data.length));
+        res.append(String.format("com.company.Array;size = %d, capacity = %d\n",size,data.length));
         res.append('[');
         for (int i = 0;i<size;i++){
             res.append(data[i]);
